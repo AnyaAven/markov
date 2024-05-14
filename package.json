@@ -1,0 +1,16 @@
+{
+  "name": "markov",
+  "version": "1.0.0",
+  "homepage": "https://github.com/rithmschool/start/",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "test:cov": "vitest --coverage"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.16",
+    "vitest": "^1.6.0",
+    "@vitest/coverage-v8": "^1.6.0"
+  }
+}
