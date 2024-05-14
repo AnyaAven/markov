@@ -31,19 +31,14 @@ class MarkovMachine {
     const chains = {};
 
     for (let i = 0; i < this.words.length; i++) {
-      const currWord = chains[i]; // this will be an array or undefined
+      const currWord = this.words[i];
+      const nextWord = this.words[i + 1] || null;
 
-      // if there is no chain array yet
-      if (currWord === undefined) {
-        chains[currWord] = [];
+      if (currWord in chains){
+        chains[currWord].push(nextWord)
+      } else {
+        chains[currWord] = [nextWord];
       }
-
-      if (i === this.words.length - 1) {
-        chains[currWord].push(null);
-        return chains;
-      }
-
-      chains[currWord].push(this.words[i + 1]);
     }
 
     return chains;
@@ -54,10 +49,10 @@ class MarkovMachine {
    *  until it hits a null choice. */
 
   getText() {
-    // TODO: implement this!
-
     // - start at the first word in the input text
     // - find a random word from the following-words of that
     // - repeat until reaching the terminal null
   }
 }
+
+export { MarkovMachine };
