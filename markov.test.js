@@ -9,8 +9,10 @@ import { MarkovMachine } from "./markov";
 
 describe("markov machine", function () {
 
+  // TODO: give a descriptive name
   let machine;
 
+  // TODO: can take this out if not using for tests that follow
   beforeEach(function () {
     machine = new MarkovMachine("the cat in the hat.");
   });
