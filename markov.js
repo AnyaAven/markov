@@ -15,7 +15,7 @@ class MarkovMachine {
   /** Get markov chain: returns object of Markov chains.
    *
    *  For text of "The cat in the hat.", chains will be:
-   *
+   *  //TODO: modify example here to show a branch possibility
    *  {
    *   "The": ["cat"],
    *   "cat": ["in"],
@@ -34,8 +34,8 @@ class MarkovMachine {
       const currWord = this.words[i];
       const nextWord = this.words[i + 1] || null;
 
-      if (currWord in chains){
-        chains[currWord].push(nextWord)
+      if (currWord in chains) {
+        chains[currWord].push(nextWord);
       } else {
         chains[currWord] = [nextWord];
       }
