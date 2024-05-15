@@ -1,5 +1,8 @@
 /** Textual markov chain generator. */
 
+import lodash from 'lodash';
+const { sample } = lodash;
+
 
 class MarkovMachine {
 
@@ -51,17 +54,19 @@ class MarkovMachine {
   getText() {
 
     let markovedText = "";
-    // start at the first word in the input text
 
-    for (const word in this.chains) {
-      markovedText += word;
-      // _.shuffle(collection);
-      const randomWord = _.shuffle(this.chains[word]);
+    const firstWord = this.words[0] //todo find an actually capitalized random word
+    markovedText += firstWord;
 
+    let randomWord = sample(this.chains[firstWord]);
+    while (randomWord){
+
+      markovedText += ` ${randomWord}`;
+      randomWord = sample(this.chains[randomWord]);
     }
-    // - find a random word from the following-words of that
 
-    // - repeat until reaching the terminal null
+    return markovedText;
+
   }
 }
 
