@@ -9,18 +9,16 @@ import { MarkovMachine } from "./markov";
 
 describe("markov machine", function () {
 
-  // TODO: give a descriptive name
-  let machine;
+  let simpleMachine;
 
-  // TODO: can take this out if not using for tests that follow
   beforeEach(function () {
-    machine = new MarkovMachine("the cat in the hat.");
+    simpleMachine = new MarkovMachine("the cat in the hat.");
   });
 
 
   test("get chains", function () {
 
-    expect(machine.chains).toEqual(
+    expect(simpleMachine.chains).toEqual(
       {
         the: ['cat', 'hat.'],
         cat: ['in'],
