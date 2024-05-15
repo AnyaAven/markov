@@ -55,5 +55,16 @@ describe("markov machine", function () {
     );
   });
 
+  test("get text from 1 word text input", function (){
+    const oneWordMachine = new MarkovMachine("oneWord");
+
+    expect(oneWordMachine.getText()).toContain("oneWord")
+  })
+
+  test("get text from a unique text input, no duplicate words", function (){
+    simpleMachine = new MarkovMachine("this is a unique sentence.");
+
+    expect(simpleMachine.getText()).toEqual("this is a unique sentence.")
+  })
 
 });
