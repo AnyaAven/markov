@@ -49,8 +49,18 @@ class MarkovMachine {
    *  until it hits a null choice. */
 
   getText() {
-    // - start at the first word in the input text
+
+    let markovedText = "";
+    // start at the first word in the input text
+
+    for (const word in this.chains) {
+      markovedText += word;
+      // _.shuffle(collection);
+      const randomWord = _.shuffle(this.chains[word]);
+
+    }
     // - find a random word from the following-words of that
+
     // - repeat until reaching the terminal null
   }
 }
