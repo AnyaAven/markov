@@ -61,12 +61,12 @@ class MarkovMachine {
     let randomWord = sample(this.chains[firstWord]);
     while (randomWord){
 
-      markovedText += ` ${randomWord}`;
+      // Add as space between words
+      markovedText = markovedText + " " + randomWord;
       randomWord = sample(this.chains[randomWord]);
     }
 
     return markovedText;
-
   }
 }
 
